@@ -30,6 +30,10 @@ figure {
   font-weight: 400;
 }
 
+ul, ol {
+  margin: 0;
+}
+
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -51,10 +55,6 @@ button {
   color: inherit;
 }
 
-a {
-  text-decoration: none;
-}
-
 button {
   overflow: visible;
   border: 0;
@@ -63,6 +63,10 @@ button {
   font: inherit;
   cursor: pointer;
   -webkit-font-smoothing: inherit;
+}
+
+.button {
+  text-decoration: none;
 }
 
 [type="radio"],

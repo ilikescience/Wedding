@@ -5,6 +5,7 @@ const ExtraWatchWebpackPlugin = require("extra-watch-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const NunjucksWebpackPlugin = require("nunjucks-webpack-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const loadNunjucksPlugin = (src, base = "") => {
   const files = fs.readdirSync(src);
@@ -19,8 +20,8 @@ const loadNunjucksPlugin = (src, base = "") => {
         templates: [
           {
             from: `${src}/${file}`,
-			to: `${base}${name}.html`,
-			context: {contenthash: '[contenthash]'}
+            to: `${base}${name}.html`,
+            context: { contenthash: "[contenthash]" }
           }
         ]
       });
@@ -38,7 +39,8 @@ module.exports = {
   },
 
   plugins: [
-	new WebpackMd5Hash(),
+    new WebpackMd5Hash(),
+    new CopyWebpackPlugin([{ from: "src/images", to: "images" }]),
     new webpack.ProgressPlugin(),
     ...loadNunjucksPlugin("./src/templates/views"),
     new ExtraWatchWebpackPlugin({

@@ -1,0 +1,45 @@
+{% extends "../layouts/default.njk" %}
+
+{% block main %}
+    <div class="container main">
+        <div class="wedding--above">
+                <img src="/images/flower_4.png">
+            </div>
+        <form>
+            <div class="form--element">
+                <label>
+                    <span>Name</span><br/>
+                    <input type="text"></input>
+                </label>
+            </div>
+            <div class="form--element form--radio-container">
+                <label class="radio">
+                    <input type="radio" name="rsvp" value="yes"/>
+                    <span class="t--size-l">Accepts with pleasure</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="rsvp" value="no">
+                    <span class="t--size-l">Declines with regrets</span>
+                </label>
+            </div>
+            <div class="form--element">
+                <label>
+                    <span>Number of guests attending</span><br/>
+                    <input type="text"></input>
+                </label>
+            </div>
+            <div class="form--element">
+                <label>
+                    <span>Email address</span><br/>
+                    <input type="email"></input>
+                </label>
+            </div>
+            <div class="form--element">
+                <input type="submit" class="button" />
+            </div>
+        </form>
+    </div>
+    <div class="container home--footer l--pad-btm-m t--align-center">
+    — Sasha and Matthew are getting married on May 2nd, 2020 in St. Louis Missouri —
+    </div>
+{% endblock %}

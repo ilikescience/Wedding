@@ -1,3 +1,122 @@
-@import 'global/reset.css';
-@import 'global/color.css';
-@import 'global/type.css';
+@import "global/reset.css";
+@import "global/color.css";
+@import "global/type.css";
+@import "global/layout.css";
+@import "global/form.css";
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav--links {
+    display: flex;
+    align-items: center;
+}
+
+.nav--links a:not(:last-child) {
+    margin-right: var(--l--space-m);
+}
+
+.wedding--above,
+.wedding--below {
+    display: flex;
+    justify-content: center;
+}
+
+.wedding--below {
+    padding-top: var(--l--space-m);
+    margin-bottom: var(--l--space-m);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem var(--l--space-m);
+    background: black;
+    color: white;
+}
+
+.button:hover {
+  cursor: pointer;
+  background: #222;
+}
+
+.wedding--above {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wedding--above p {
+  max-width: 40rem;
+  text-align: center;
+}
+
+.wedding--above img {
+    width: 100px;
+    height: auto;
+}
+
+.wedding--main {
+    display: flex;
+    justify-content: center;
+}
+
+.wedding h1 {
+    margin-top: 0;
+}
+
+.wedding h2 {
+    margin-top: 0;
+}
+
+.wedding--left, .wedding--right {
+  flex: 0 1 25rem;
+}
+
+.wedding--left {
+    text-align: right;
+}
+
+.wedding--middle {
+    flex: 0 1 2px;
+    height: 180px;
+    background: var(--c--gray-20);
+    margin: 0 var(--l--space-m);
+}
+
+svg image:nth-of-type(4n) {
+  animation: moveOne 20s ease-in-out 0s infinite alternate;
+}
+
+svg image:nth-of-type(4n + 1) {
+  animation: moveOne 20s ease-in-out -13s infinite alternate;
+}
+
+svg image:nth-of-type(4n + 2) {
+  animation: moveOne 20s ease-in-out -17s infinite alternate;
+}
+
+svg image:nth-of-type(4n + 3) {
+    animation: moveOne 20s ease-out -23s infinite alternate;
+  }
+
+@keyframes moveOne {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20%);
+  }
+}
